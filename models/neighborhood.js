@@ -11,7 +11,9 @@ const mongoose = require('./connection.js')
 //Create model schema 
 
 const NeighborhoodSchema = new mongoose.Schema({
- name: String
+ name: String,
+ description: String
+
 })
 
 //Step 3
@@ -25,10 +27,30 @@ function getAllNeighborhoods() {
   return NeighborhoodCollection.find()
 }
 
+function getNeighborhood(neighborhoodId) {
+  return NeighborhoodCollection.findById(neighborhoodId)
+}
+
+function addNewNeighborhood(neighborhoodObject) {
+  return NeighborhoodCollection.create(neighborhoodObject)
+}
+
+function updateNeighborhood(neighborhoodId, updatedNeighborhood) {
+  return NeighborhoodCollection.findByIdAndUpdate(neighborhoodId, updatedNeighborhood, {new: true})
+}
+
+function deleteNeighborhood(neighborhoodId) {
+  return NeighborhoodCollection.findByIdAndDelete(neighborhoodId)
+}
+
 //Step 5
 //Export all functions from this file by adding their names as keys to this
 //object
 
 module.exports = {
-  getAllNeighborhoods
+  getAllNeighborhoods,
+  getNeighborhood,
+  addNewNeighborhood,
+  updateNeighborhood,
+  deleteNeighborhood
 }

@@ -67,7 +67,7 @@ export default class SingleNeighborhood extends Component {
                 <input
                     type='text'
                     id='neighborhood-description'
-                    name='name'
+                    name='description'
                     onChange={this.handleInputChange}
                     value={this.state.neighborhood.description}
                 />

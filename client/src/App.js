@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Neighborhoods from './components/Neighborhoods.js'
+import Routes from './components/Routes'
 import SingleNeighborhood from './components/SingleNeighborhood'
 import './App.css';
 
@@ -10,7 +11,7 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/" component={Neighborhoods}/>
-          <Route path='/route' component={Routes}/>
+          <Route path='/routes' component={Routes}/>
         </Switch>
       </Router>
     </div>

@@ -9,7 +9,7 @@ export default class Routes extends Component {
         newRoute: {
             name: '',
             description: '',
-            distance: ''
+            distance: '',
             rating: ''
         }
     }

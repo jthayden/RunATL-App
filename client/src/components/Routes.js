@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import SingleRoute from './SingleRoute'
+import SingleRoute from "./SingleRoute";
 
 export default class Routes extends Component {
   state = {

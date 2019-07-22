@@ -13,7 +13,6 @@ const mongoose = require('./connection.js')
 const NeighborhoodSchema = new mongoose.Schema({
  name: String,
  description: String
-
 })
 
 //Step 3

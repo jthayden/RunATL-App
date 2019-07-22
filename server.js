@@ -8,6 +8,7 @@ const app = express()
 //Import routers from controllers/
 
 const { neighborhoodRouter } = require('./controllers/neighborhood.js')
+const { routeRouter } = require('./controllers/route.js')
 
 
 //Step 3
@@ -36,6 +37,7 @@ app.use(express.static(`${__dirname}/client/build`))
 //the paths defined in the router.
 
 app.use('/api/neighborhoods', neighborhoodRouter)
+app.use('/api/routes', routeRouter)
 
 //Step 5
 //Add catch all route to serve up the built react app for any request not made to our

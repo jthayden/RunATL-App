@@ -59,7 +59,7 @@ neighborhoodRouter.delete("/:neighborhoodId", (req, res) => {
     });
 });
 
-//Step 6
+//Step 5
 //Export the router from the file.
 
 module.exports = {

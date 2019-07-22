@@ -1,50 +1,50 @@
-/* Step 1 import express
- *
- */
-const express = require('express')
+//Step 1 import express
 
-/* Step 2
- *
- * Import the api files from the models
- *
- * TODO: change the file path to the models file you'll need to use.
- * TODO: rename this from `templateApi` to something more sensible (e.g:
- * `shopsAPI`)
- *
- * NOTE: You may need to import more than one API to create the 
- * controller you need.
- * 
- */
-const templateApi = require('../models/template.js')
+const express = require("express");
 
-/* Step 3 
- * 
- * Create a new router.
- *
- * the router will "contain" all the request handlers that you define in this file.
- * TODO: rename this from templateRouter to something that makes sense. (e.g:
- * `shopRouter`)
- */
-const templateRouter = express.Router()
+//Step 2
+//Import the api files from the models
 
-/* Step 4
- * 
- * TODO: Put all request handlers here
- */
+const routeApi = require("../models/route.js");
 
-/* Step 5
- *
- * TODO: delete this handler; it's just a sample
- */ 
-templateRouter.get('/', (req, res) => {
-  res.json(templateApi.getHelloWorldString())
-})
+//Step 3
+//Create a new router.
 
-/* Step 6
- *
- * Export the router from the file.
- *
- */
+const routeRouter = express.Router();
+
+//Step 4
+//Put all request handlers here
+routeRouter.get("/", (req, res) => {
+  routeApi
+    .getAllRoutes()
+    .then(routes => {
+      res.json(routes);
+    })
+    .catch(err => {
+      console.log(err);
+    });
+});
+
+routeRouter.get("/:routeId", (req, res) => {
+  routeApi
+    .getRoute(req.params.routeId)
+    .then(route => {
+      res.json(route);
+    })
+    .catch(err => {
+      console.log(err);
+    });
+});
+
+routeRouter.post("/", (req, res) => {
+  routeApi.addNewRoute(req.body).then(neighborhood => {
+    res.json(route);
+  });
+});
+
+//Step 5
+//Export the router from the file.
+
 module.exports = {
-  templateRouter
-}
+  routeRouter
+};

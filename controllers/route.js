@@ -42,6 +42,18 @@ routeRouter.post("/", (req, res) => {
   });
 });
 
+routeRouter.put("/:routeId", (req, res) => {
+  routeApi.updateRoute(req.params.routeId, req.body).then(updatedRoute => {
+    res.json(updatedRoute);
+  });
+});
+
+routeRouter.delete("/:routeId", (req, res) => {
+  routeApi.deleteRoute(req.params.routeId).then(route => {
+    res.json(route);
+  });
+});
+
 //Step 5
 //Export the router from the file.
 

@@ -35,6 +35,14 @@ function addNewRoute(routeObject) {
   return RouteCollection.create(routeObject)
 }
 
+function updateRoute(routeId, updatedRoute) {
+  return RouteCollection.findByIdAndUpdate(routeId, updatedRoute, {new: true})
+}
+
+function deleteRoute(routeId) {
+  return RouteCollection.findByIdAndDelete(routeId)
+}
+
 //Step 5
 //Export all functions from this file by adding their names as keys to this
 //object
@@ -42,5 +50,7 @@ function addNewRoute(routeObject) {
 module.exports = {
   getAllRoutes,
   getRoute,
-  addNewRoute
+  addNewRoute,
+  updateRoute,
+  deleteRoute
 } 

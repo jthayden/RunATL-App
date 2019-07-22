@@ -47,7 +47,7 @@ export default class SingleRoute extends Component {
 
   render() {
     if (this.state.redirectToHome) {
-      return <Redirect to="/" />;
+      return <Redirect to="/routes" />;
     }
     return this.state.isEditFormDisplayed ? (
       <form onSubmit={this.handleSubmit}>

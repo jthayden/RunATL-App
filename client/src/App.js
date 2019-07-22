@@ -17,8 +17,8 @@ function App() {
             path="/neighborhoods/:neighborhoodId"
             component={SingleNeighborhood}
           />
-          <Route exact path="/routes" component={Routes} />
           <Route exact path="/routes/:routeId" component={SingleRoute} />
+          <Route exact path="/routes" component={Routes} />
         </Switch>
       </Router>
     </div>

@@ -11,6 +11,7 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/" component={Neighborhoods}/>
+          <Route path='/neighborhoods/:neighborhoodId' component={SingleNeighborhood}/>
           <Route path='/routes' component={Routes}/>
         </Switch>
       </Router>

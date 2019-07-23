@@ -37,7 +37,7 @@ routeRouter.get("/:routeId", (req, res) => {
 });
 
 routeRouter.post("/", (req, res) => {
-  routeApi.addNewRoute(req.body).then(neighborhood => {
+  routeApi.addNewRoute(req.body).then(route => {
     res.json(route);
   });
 });

@@ -11,7 +11,8 @@ export default class Routes extends Component {
       name: "",
       description: "",
       distance: "",
-      rating: ""
+      rating: "",
+      // type: ""
     }
   };
 
@@ -81,6 +82,14 @@ export default class Routes extends Component {
           onChange={this.handleInputChange}
           value={this.state.newRoute.distance}
         />
+        {/* <label htmlFor="new-route-type">Route Type</label>
+        <input
+          type="text"
+          name="type"
+          id="new-route-type"
+          onChange={this.handleInputChange}
+          value={this.state.newRoute.type}
+        /> */}
         <label htmlFor="new-route-rating">Rating</label>
         <input
           type="number"

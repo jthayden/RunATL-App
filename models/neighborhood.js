@@ -1,45 +1,52 @@
-//Place all functions, classes, and/or DB schemas here for a single 
+//Place all functions, classes, and/or DB schemas here for a single
 //model.
-
 
 //Step 1
 //Import mongoose connection
 
-const mongoose = require('./connection.js')
+const mongoose = require("./connection.js");
 
 //Step 2
-//Create model schema 
+//Create model schema
 
 const NeighborhoodSchema = new mongoose.Schema({
- name: String,
- description: String
-})
+  name: String,
+  description: String,
+  routes: [{ type: mongoose.Schema.Types.ObjectId, ref: "Route" }]
+});
 
 //Step 3
 //Create collection API
 
-const NeighborhoodCollection = mongoose.model('Neighborhood', NeighborhoodSchema)
+const NeighborhoodCollection = mongoose.model(
+  "Neighborhood",
+  NeighborhoodSchema
+);
 
 //Step 4
 
 function getAllNeighborhoods() {
-  return NeighborhoodCollection.find()
+  return NeighborhoodCollection.find();
 }
 
 function getNeighborhood(neighborhoodId) {
-  return NeighborhoodCollection.findById(neighborhoodId)
+  return NeighborhoodCollection.findById(neighborhoodId);
 }
 
 function addNewNeighborhood(neighborhoodObject) {
-  return NeighborhoodCollection.create(neighborhoodObject)
+  return NeighborhoodCollection.create(neighborhoodObject);
 }
 
 function updateNeighborhood(neighborhoodId, updatedNeighborhood) {
-  return NeighborhoodCollection.findByIdAndUpdate(neighborhoodId, updatedNeighborhood, {new: true})
+  return NeighborhoodCollection.findByIdAndUpdate(
+    neighborhoodId,
+    updatedNeighborhood,
+    { new: true }
+  );
 }
 
 function deleteNeighborhood(neighborhoodId) {
-  return NeighborhoodCollection.findByIdAndDelete(neighborhoodId)
+  return NeighborhoodCollection.findByIdAndDelete(neighborhoodId);
 }
 
 //Step 5
@@ -52,4 +59,4 @@ module.exports = {
   addNewNeighborhood,
   updateNeighborhood,
   deleteNeighborhood
-}
+};

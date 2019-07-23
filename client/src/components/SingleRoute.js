@@ -77,6 +77,14 @@ export default class SingleRoute extends Component {
           onChange={this.handleInputChange}
           value={this.state.route.distance}
         />
+        {/* <label htmlFor="route-type">Route Type</label>
+        <input
+          type="text"
+          name="type"
+          id="route-type"
+          onChange={this.handleInputChange}
+          value={this.state.route.type}
+        /> */}
         <label htmlFor="route-rating">Route Rating</label>
         <input
           type="number"
@@ -94,6 +102,7 @@ export default class SingleRoute extends Component {
         <h2>{this.state.route.name}</h2>
         <p>{this.state.route.description}</p>
         <p>{this.state.route.distance}</p>
+        {/* <p>{this.state.route.type}</p> */}
         <p>{this.state.route.rating}</p>
       </div>
     );

@@ -13,7 +13,8 @@ const RouteSchema = new mongoose.Schema({
  name: String,
  description: String,
  distance: Number,
- rating: Number
+ rating: Number,
+//  neighborhoodId: { type:mongoose.Schema.Types.ObjectId, required:true }
 })
 
 //Step 3
@@ -26,6 +27,10 @@ const RouteCollection = mongoose.model('Route', RouteSchema)
 function getAllRoutes() {
   return RouteCollection.find()
 }
+
+// function getRoutesByNeighborhoodId(neighborhoodId) {
+//   return RouteCollection.find({ neighborhoodId: neighborhoodId})
+// }
 
 function getRoute(routeId) {
   return RouteCollection.findById(routeId)
@@ -52,5 +57,6 @@ module.exports = {
   getRoute,
   addNewRoute,
   updateRoute,
-  deleteRoute
+  deleteRoute,
+  // getRoutesByNeighborhoodId
 } 

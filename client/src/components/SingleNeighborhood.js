@@ -59,6 +59,8 @@ export default class SingleNeighborhood extends Component {
       return <Redirect to="/" />;
     }
     return this.state.isEditFormDisplayed ? (
+      <div>
+      <button>Back to Home</button>
       <form onSubmit={this.handleSubmit}>
         <label htmlFor="neighborhood-name">Neighborhood Name</label>
         <input
@@ -80,6 +82,7 @@ export default class SingleNeighborhood extends Component {
         />
         <input type="submit" value="Update Neighborhood" />
       </form>
+      </div>
     ) : (
       <div>
         <button onClick={this.handleToggleEditForm}>Edit Neighborhood</button>

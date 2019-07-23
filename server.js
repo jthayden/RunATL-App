@@ -9,6 +9,7 @@ const app = express()
 
 const { neighborhoodRouter } = require('./controllers/neighborhood.js')
 const { routeRouter } = require('./controllers/route.js')
+const { groupRouter } = require('./controllers/group.js')
 
 
 //Step 3
@@ -38,6 +39,7 @@ app.use(express.static(`${__dirname}/client/build`))
 
 app.use('/api/neighborhoods', neighborhoodRouter)
 app.use('/api/routes', routeRouter)
+app.use('/api/groups', groupRouter)
 
 //Step 5
 //Add catch all route to serve up the built react app for any request not made to our

@@ -27,12 +27,17 @@ export default class SingleNeighborhood extends Component {
   handleSubmit = event => {
     event.preventDefault();
 
-    axios.put(`/api/neighborhoods/${this.state.neighborhood._id}`).then(res => {
-      this.setState({
-        creature: res.data,
-        isEditFormDisplayed: false
+    axios
+      .put(
+        `/api/neighborhoods/${this.state.neighborhood._id}`,
+        this.state.neighborhood
+      )
+      .then(res => {
+        this.setState({
+          creature: res.data,
+          isEditFormDisplayed: false
+        });
       });
-    });
   };
 
   handleToggleEditForm = () => {

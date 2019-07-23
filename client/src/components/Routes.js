@@ -39,7 +39,7 @@ export default class Routes extends Component {
   };
 
   handleSubmit = event => {
-    event.preventDefault();
+    // event.preventDefault();
 
     axios.post("/api/routes", this.state.newRoute).then(() => {
       this.setState({ isNewFormDisplayed: false });

@@ -25,12 +25,14 @@ export default class SingleRoute extends Component {
   handleSubmit = event => {
     event.preventDefault();
 
-    axios.put(`/api/routes/${this.state.route._id}`).then(res => {
-      this.setState({
-        route: res.data,
-        isEditFormDisplayed: false
+    axios
+      .put(`/api/routes/${this.state.route._id}`, this.state.route)
+      .then(res => {
+        this.setState({
+          route: res.data,
+          isEditFormDisplayed: false
+        });
       });
-    });
   };
 
   handleToggleEditForm = () => {

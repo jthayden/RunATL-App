@@ -24,6 +24,7 @@ button {
 a {
   margin: 15px;
   display: block;
+  text-decoration-line: none;
 }
 
 input.button {
@@ -42,4 +43,8 @@ label {
 
 input {
   width: 300px;
+}
+
+h1, h2 {
+  text-decoration-line: underline;
 }

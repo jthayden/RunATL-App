@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Neighborhoods from "./components/Neighborhoods.js";
+import AllNeighborhoods from './components/neighborhoods/AllNeighborhoods';
 import Routes from "./components/Routes";
 import SingleNeighborhood from "./components/SingleNeighborhood";
 import SingleRoute from "./components/SingleRoute.js";
@@ -14,8 +14,9 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-          <Route exact path="/" component={Neighborhoods} />
-          <Route exact path='/neighborhoods/create' component={CreateNeighborhood}
+          <Route exact path="/" component={AllNeighborhoods} />
+          <Route exact path='/neighborhoods' component={AllNeighborhoods}/>
+          <Route exact path='/neighborhoods/create' component={CreateNeighborhood}/>
           <Route
             exact
             path="/neighborhoods/:neighborhoodId"

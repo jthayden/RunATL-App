@@ -12,7 +12,7 @@ const mongoose = require("./connection.js");
 const NeighborhoodSchema = new mongoose.Schema({
   name: String,
   description: String,
-  routes: [{ type: mongoose.Schema.Types.ObjectId, ref: "Route" }]
+  // routes: [{ type: mongoose.Schema.Types.ObjectId, ref: "Route" }]
 });
 
 //Step 3
@@ -29,8 +29,12 @@ function getAllNeighborhoods() {
   return NeighborhoodCollection.find();
 }
 
+function getAllRoutes() {
+  return NeighborhoodCollection.find()
+}
+
 function getNeighborhood(neighborhoodId) {
-  return NeighborhoodCollection.findById(neighborhoodId);
+  return NeighborhoodCollection.findById(neighborhoodId).populate('routes');
 }
 
 function addNewNeighborhood(neighborhoodObject) {
@@ -58,5 +62,6 @@ module.exports = {
   getNeighborhood,
   addNewNeighborhood,
   updateNeighborhood,
-  deleteNeighborhood
+  deleteNeighborhood,
+  getAllRoutes
 };

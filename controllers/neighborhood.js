@@ -6,7 +6,7 @@ const express = require("express");
 //Import the api files from the models
 
 const neighborhoodApi = require("../models/neighborhood");
-const routeApi = require("../models/route")
+
 
 //Step 3
 //Create a new router.
@@ -43,16 +43,6 @@ neighborhoodRouter.post("/", (req, res) => {
     res.json(neighborhood);
   });
 });
-
-// neighborhoodRouter.get('/:neighborhoodId', (req, res) => {
-//   neighborhoodApi.getNeighborhood(req.params.neighborhoodId)
-//   .then((neighborhood) => {
-//     routeApi.getRoutesByNeighborhoodId(neighborhood._id)
-//     .then((neighborhood, routes) => {
-//       res.json(neighborhood, routes)
-//     })
-//   })
-// })
 
 neighborhoodRouter.put("/:neighborhoodId", (req, res) => {
   neighborhoodApi

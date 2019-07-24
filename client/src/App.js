@@ -22,6 +22,7 @@ function App() {
           <Route exact path="/routes/:routeId" component={SingleRoute} />
           <Route exact path="/routes" component={Routes} />
           <Route exact path="/groups" component={Groups} />
+          <Route exact path="/groups/:groupId" component={SingleGroup} />
         </Switch>
       </Router>
     </div>

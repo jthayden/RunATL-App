@@ -1,12 +1,14 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import AllNeighborhoods from './components/neighborhoods/AllNeighborhoods';
+import SingleNeighborhood from './components/neighborhoods/SingleNeighborhood'
 import Routes from "./components/Routes";
-import SingleNeighborhood from "./components/SingleNeighborhood";
+// import SingleNeighborhood from "./components/SingleNeighborhood";
 import SingleRoute from "./components/SingleRoute.js";
 import Groups from "./components/Groups.js";
 import SingleGroup from "./components/SingleGroup.js";
 import CreateNeighborhood from "./components/neighborhoods/CreateNeighborhood.js";
+import EditNeighborhood from './components/neighborhoods/EditNeighborhood'
 import "./App.css";
 
 function App() {
@@ -22,6 +24,7 @@ function App() {
             path="/neighborhoods/:neighborhoodId"
             component={SingleNeighborhood}
           />
+          <Route exact path='/neighborhoods/:neighborhoodId/edit' component={EditNeighborhood}/>
           <Route exact path="/routes/:routeId" component={SingleRoute} />
           <Route exact path="/routes" component={Routes} />
           <Route exact path="/groups" component={Groups} />

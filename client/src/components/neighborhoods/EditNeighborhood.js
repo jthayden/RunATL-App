@@ -10,7 +10,7 @@ export default class EditNeighborhood extends Component {
 
   componentDidMount() {
     axios
-      .get(`/api/neighborhoods/${(this.props, match.params.neighborhoodId)}`)
+      .get(`/api/neighborhoods/${(this.props.match.params.neighborhoodId)}`)
       .then(res => {
         this.setState({ neighborhood: res.data });
       });

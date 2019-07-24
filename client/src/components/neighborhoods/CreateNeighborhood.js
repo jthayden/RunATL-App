@@ -14,7 +14,7 @@ export default class CreateNeighborhood extends Component {
   }
 
   getAllNeighborhoods = () => {
-    axios.get("/api/courts").then(res => {
+    axios.get("/api/neighborhoods").then(res => {
       this.setState({ neighborhoods: res.data });
     });
   };

@@ -6,6 +6,7 @@ import SingleNeighborhood from "./components/SingleNeighborhood";
 import SingleRoute from "./components/SingleRoute.js";
 import Groups from "./components/Groups.js";
 import SingleGroup from "./components/SingleGroup.js";
+import CreateNeighborhood from "./components/neighborhoods/CreateNeighborhood.js";
 import "./App.css";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/" component={Neighborhoods} />
+          <Route exact path='/neighborhoods/create' component={CreateNeighborhood}
           <Route
             exact
             path="/neighborhoods/:neighborhoodId"

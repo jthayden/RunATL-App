@@ -14,7 +14,7 @@ const RouteSchema = new mongoose.Schema({
  description: String,
  distance: Number,
  rating: Number,
- neighborhoodId: { type:mongoose.Schema.Types.ObjectId }
+ neighborhoodId: { type:mongoose.Schema.Types.ObjectId, required: true }
 })
 
 //Step 3
@@ -58,5 +58,5 @@ module.exports = {
   addNewRoute,
   updateRoute,
   deleteRoute,
-  // getRoutesByNeighborhoodId
+  getRoutesByNeighborhoodId
 } 

@@ -27,6 +27,7 @@ export default class SingleRoute extends Component {
         }
         return (
             <div>
+                <Link to={`/neighborhoods/${this.state.route.neighborhoodId}`}>Back to Neighborhood</Link>
                 <h2>Route</h2>
                 <h2>{this.state.route.name} </h2>
                 <p>{this.state.route.description} </p>

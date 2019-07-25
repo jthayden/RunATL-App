@@ -33,6 +33,7 @@ export default class SingleRoute extends Component {
                 <p>{this.state.route.distance} </p>
                 <p>{this.state.route.rating} </p>
                 <button onClick={this.handleDelete}>Delete Route</button>
+                <Link to={`/routes/${this.state.route._id}/edit`}>Edit Route</Link>
             </div>
         )
     }

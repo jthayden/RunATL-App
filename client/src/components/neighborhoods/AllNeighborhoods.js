@@ -3,7 +3,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import CreateNeighborhood from './CreateNeighborhood.js'
+import CreateNeighborhood from "./CreateNeighborhood.js";
+import { Card, CardGroup, CardDeck } from "react-bootstrap";
 
 //Step 2
 
@@ -14,7 +15,8 @@ export default class Neighborhoods extends Component {
     neighborhoods: [],
     newNeighborhood: {
       name: "",
-      description: ""
+      description: "",
+      image: ''
     }
   };
 
@@ -44,8 +46,22 @@ export default class Neighborhoods extends Component {
   render() {
     let neighborhoodsList = this.state.neighborhoods.map(neighborhood => {
       return (
-        <Link key={neighborhood._id} to={`/neighborhoods/${neighborhood._id}`}>
-          {neighborhood.name}
+        <Link className='neighborhood-card' key={neighborhood._id} to={`/neighborhoods/${neighborhood._id}`}>
+          {/* {neighborhood.name} */}
+          <CardDeck>
+            <Card>
+              <Card.Img variant="top" src={neighborhood.image} />
+              <Card.Body>
+                <Card.Title>{neighborhood.name}</Card.Title>
+                <Card.Text>
+                  {neighborhood.description}
+                </Card.Text>
+              </Card.Body>
+              <Card.Footer>
+                <small className="text-muted">Last updated 3 mins ago</small>
+              </Card.Footer>
+            </Card>
+          </CardDeck>
         </Link>
       );
     });
@@ -53,9 +69,8 @@ export default class Neighborhoods extends Component {
       <div>
         <h1>Neighborhoods</h1>
         <div>{neighborhoodsList}</div>
-        <Link to={'/neighborhoods/create'}>Add Neighborhood</Link>
+        <Link to={"/neighborhoods/create"}>Add Neighborhood</Link>
       </div>
     );
   }
 }
-

@@ -12,6 +12,7 @@ const mongoose = require("./connection.js");
 const NeighborhoodSchema = new mongoose.Schema({
   name: String,
   description: String,
+  image: String
   // routes: [{ type: mongoose.Schema.Types.ObjectId, ref: "Route" }]
 });
 

@@ -71,3 +71,16 @@ video {
   
 }
 
+.card {
+  display: block;
+}
+
+.card-group {
+  display: inline-grid;
+  width: 250px;
+}
+
+.neighborhood-card {
+  display:inline-flex;
+  width: 50vh;
+}

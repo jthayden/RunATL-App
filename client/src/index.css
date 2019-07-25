@@ -48,3 +48,26 @@ input {
 h1, h2 {
   text-decoration-line: underline;
 }
+
+video {
+  max-width: 100%;
+  margin: 0px;
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+}
+
+.landing-page {
+  position: absolute;
+  width:100%;
+  top:50%;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 100%;
+  
+}
+

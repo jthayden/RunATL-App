@@ -16,7 +16,7 @@ export default class Neighborhoods extends Component {
     newNeighborhood: {
       name: "",
       description: "",
-      image: ''
+      image: ""
     }
   };
 
@@ -46,16 +46,20 @@ export default class Neighborhoods extends Component {
   render() {
     let neighborhoodsList = this.state.neighborhoods.map(neighborhood => {
       return (
-        <Link className='neighborhood-card' key={neighborhood._id} to={`/neighborhoods/${neighborhood._id}`}>
+        <Link
+          className="neighborhood-card"
+          key={neighborhood._id}
+          to={`/neighborhoods/${neighborhood._id}`}
+        >
           {/* {neighborhood.name} */}
           <CardDeck>
             <Card>
               <Card.Img variant="top" src={neighborhood.image} />
               <Card.Body>
-                <Card.Title>{neighborhood.name}</Card.Title>
-                <Card.Text>
-                  {neighborhood.description}
-                </Card.Text>
+                
+                  <Card.Title>{neighborhood.name}</Card.Title>
+                
+                <Card.Text>{neighborhood.description}</Card.Text>
               </Card.Body>
               <Card.Footer>
                 <small className="text-muted">Last updated 3 mins ago</small>
@@ -67,8 +71,22 @@ export default class Neighborhoods extends Component {
     });
     return (
       <div>
+        <ul class="navigation">
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="#">About</a>
+          </li>
+          <li>
+            <a href="#">Products</a>
+          </li>
+          <li>
+            <a href="#">Contact</a>
+          </li>
+        </ul>
         <h1>Neighborhoods</h1>
-        <div>{neighborhoodsList}</div>
+        <div className='neighborhoods'>{neighborhoodsList}</div>
         <Link to={"/neighborhoods/create"}>Add Neighborhood</Link>
       </div>
     );

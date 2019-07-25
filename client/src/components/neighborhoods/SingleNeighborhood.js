@@ -42,7 +42,7 @@ export default class SingleNeighborhood extends Component {
 
   render() {
     if (this.state.redirectToHome) {
-      return <Redirect to="neighborhoods" />;
+      return <Redirect to="/neighborhoods" />;
     }
     let routeArr = this.state.routes.map(singleRoute => {
       return (
@@ -69,6 +69,7 @@ export default class SingleNeighborhood extends Component {
         <button onClick={this.handleDelete}>Delete Neighborhood</button>
         <h2>{this.state.neighborhood.name}</h2>
         <p>{this.state.neighborhood.description}</p>
+        <img src={this.state.neighborhood.image}></img>
         <button>
           <a href="/neighborhoods">Back to Neighborhoods</a>
         </button>

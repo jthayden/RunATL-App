@@ -72,15 +72,34 @@ video {
 }
 
 .card {
-  display: block;
+  /* display: block; */
+  width:200px;
 }
 
 .card-group {
-  display: inline-grid;
-  width: 250px;
+  /* display: inline-grid; */
+  width: 200px;
 }
 
 .neighborhood-card {
-  display:inline-flex;
+  /* display:inline-flex; */
   width: 50vh;
+}
+
+.navigation {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  list-style: none;
+}
+
+.neighborhoods {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: space-between;
+}
+
+.card-deck {
+  width: 300px;
 }

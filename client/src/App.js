@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import LandingPage from './components/LandingPage'
 import AllNeighborhoods from './components/neighborhoods/AllNeighborhoods';
 import SingleNeighborhood from './components/neighborhoods/SingleNeighborhood'
 // import Routes from "./components/Routes";
@@ -18,7 +19,7 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-          <Route exact path="/" component={AllNeighborhoods} />
+          <Route exact path="/" component={LandingPage} />
           <Route exact path='/neighborhoods' component={AllNeighborhoods}/>
           <Route exact path='/neighborhoods/create' component={CreateNeighborhood}/>
           <Route

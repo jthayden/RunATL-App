@@ -10,7 +10,7 @@ export default class EditNeighborhood extends Component {
 
   componentDidMount() {
     axios
-      .get(`/api/neighborhoods/${(this.props.match.params.neighborhoodId)}`)
+      .get(`/api/neighborhoods/${this.props.match.params.neighborhoodId}`)
       .then(res => {
         this.setState({ neighborhood: res.data });
       });
@@ -63,7 +63,15 @@ export default class EditNeighborhood extends Component {
             onChange={this.handleInputChange}
             value={this.state.neighborhood.description}
           />
-          <input type="submit" value="Update Neighborhood" />
+          <label htmlFor="neighborhood-image">Neighborhood Image</label>
+          <input
+            type="text"
+            name="image"
+            id="neighborhood-image"
+            onChange={this.handleInputChange}
+            value={this.state.neighborhood.image}
+          />
+          <input className="button" type="submit" value="Update Neighborhood" />
         </form>
       </div>
     );

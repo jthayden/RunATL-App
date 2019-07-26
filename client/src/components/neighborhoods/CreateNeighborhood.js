@@ -59,14 +59,14 @@ export default class CreateNeighborhood extends Component {
             onChange={this.handleInputChange}
             value={this.state.newNeighborhood.description}
           />
-          <label htmlFor='new-neighborhood-image'>Neighborhood Image</label>
+          <label htmlFor="new-neighborhood-image">Neighborhood Image</label>
           <input
-            type='text'
-            name='image'
-            id='new-neighborhood-image'
+            type="text"
+            name="image"
+            id="new-neighborhood-image"
             onChange={this.handleInputChange}
             value={this.state.newNeighborhood.image}
-            />
+          />
           <input
             className="button"
             type="submit"

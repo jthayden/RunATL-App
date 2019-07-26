@@ -39,7 +39,7 @@ export default class EditNeighborhood extends Component {
 
   render() {
     if (this.state.redirectToHome) {
-      return <Redirect to="/neighborhoods" />;
+      return <Redirect to={`/neighborhoods/${this.state.neighborhood._id}`} />;
     }
     return (
       <div>

@@ -62,17 +62,33 @@ export default class SingleNeighborhood extends Component {
     });
     return (
       <div>
+        <ul class="navigation">
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/neighborhoods">Neighborhoods</a>
+          </li>
+          <li>
+            <a href={`/neighborhoods/${this.state.neighborhood._id}/edit`}>Edit</a>
+          </li>
+          <li>
+            <a onClick={this.handleDelete}>Delete</a>
+          </li>
+        </ul>
         <h1>Neighborhood:</h1>
-        <Link to={`/neighborhoods/${this.state.neighborhood._id}/edit`}>
+        {/* <Link to={`/neighborhoods/${this.state.neighborhood._id}/edit`}>
           Edit Neighborhood
-        </Link>
-        <button onClick={this.handleDelete}>Delete Neighborhood</button>
+        </Link> */}
+        {/* <button onClick={this.handleDelete}>Delete Neighborhood</button> */}
         <h2>{this.state.neighborhood.name}</h2>
         <p>{this.state.neighborhood.description}</p>
         <img src={this.state.neighborhood.image}></img>
-        <button>
+        <iframe src="https://www.google.com/maps/d/embed?mid=1uU3qBJcOXi7uhjl5MPd0MFUi3xA" width="640" height="480"></iframe>
+
+        {/* <button>
           <a href="/neighborhoods">Back to Neighborhoods</a>
-        </button>
+        </button> */}
 
         <h2>Routes:</h2>
 

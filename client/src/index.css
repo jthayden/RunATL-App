@@ -13,7 +13,7 @@ code {
 }
 
 html {
-  background: lightgray;
+  /* background: lightgray; */
   margin: 30px;
 }
 
@@ -21,11 +21,11 @@ button {
   margin: 15px;
 }
 
-a {
+/* a {
   margin: 15px;
   display: block;
   text-decoration-line: none;
-}
+} */
 
 input.button {
   margin-top: 15px;
@@ -73,18 +73,15 @@ video {
 
 .card {
   /* display: block; */
-  width:200px;
+  /* width:200px; */
 }
 
 .card-group {
   /* display: inline-grid; */
-  width: 200px;
+  /* width: 200px; */
 }
 
-.neighborhood-card {
-  /* display:inline-flex; */
-  width: 50vh;
-}
+
 
 .navigation {
   display: flex;
@@ -93,13 +90,26 @@ video {
   list-style: none;
 }
 
-.neighborhoods {
+.neighborhoods-container {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   align-content: space-between;
+  margin: 35px auto;
+}
+
+.neighborhood-card {
+  /* display:inline-flex; */
+  /* width: 300px; */
+  /* height: 300px; */
 }
 
 .card-deck {
-  width: 300px;
+  /* width: 300px;
+  height: 350px; */
+}
+
+.img-fluid {
+  max-height:162px;
+  min-height: 162px;
 }
